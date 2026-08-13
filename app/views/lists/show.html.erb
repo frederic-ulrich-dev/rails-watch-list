@@ -1,0 +1,13 @@
+<h1><%= @list.name %></h1>
+
+<%= link_to "Ajouter un film", new_list_bookmark_path(@list) %>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <h2><%= bookmark.movie.title %></h2>
+  <p><%= bookmark.comment %></p>
+
+  <%= button_to "Supprimer",
+        bookmark_path(bookmark),
+        method: :delete,
+        data: { turbo_confirm: "Supprimer ce film de la liste ?" } %>
+<% end %>

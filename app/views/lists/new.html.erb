@@ -1,0 +1,7 @@
+<h1>Créer une nouvelle liste</h1>
+
+<%= form_with model: @list do |f| %>
+  <%= f.label :name, "Nom de la liste" %>
+  <%= f.text_field :name %>
+  <%= f.submit "Créer la liste" %>
+<% end %>
